@@ -1,3 +1,9 @@
+#-----------------------------
+# Udacitask Part 1
+# Diane Van Etten
+#-----------------------------
+
+
 class TodoList
     # methods and stuff go here
     attr_accessor :title, :items, :user
@@ -23,6 +29,7 @@ class TodoList
   # Method to delete items from list (completes rubric TodoList Class requirement)
   def remove_item(index)
     @items.delete_at(index)
+    puts "Item ##{index} has been removed from the list."
   end
 
   # Method to update the completion status of an item on the list (completes rubric TodoList Class requirement)
@@ -35,18 +42,23 @@ class TodoList
     return @items.all? {|item| item.completion_status == true}
   end
 
+  def list_break
+    puts "-" * 45
+  end
+
+  # def item_break
+  #   puts " " * 20
+  # end
+
   # Method to print todo list (completes rubric TodoList Class requirement)
   def print_list 
   header = "#{@title} -- Completed: #{completed?}"
-    puts "-" * header.length
+    list_break
     puts header
-    puts "-" * header.length
-    longest_word = @items.inject(0) do |previous_length, current_word|
-      current_length = current_word.description.length
-      current_length > previous_length ? current_length : previous_length
-    end
+    list_break
+    
     @items.each_index {|index|
-      puts "#{index} - [#{items[index].priority}]#{@items[index].description}".ljust(longest_word + 10) + "Completed: #{@items[index].completion_status}"
+      puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}" + "          " + "Completed: #{@items[index].completion_status}"
     }
   end
 end
