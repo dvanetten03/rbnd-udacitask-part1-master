@@ -3,15 +3,14 @@
 # Diane Van Etten
 #-----------------------------
 
-
 class TodoList
     # methods and stuff go here
-    attr_accessor :title, :items, :user
+    attr_accessor :title
+    attr_reader :items
 
   # Initialize to-do list with a title and no items (completes rubric TodoList Class requirement)
-  def initialize(list_title, user)
+  def initialize(list_title)
     @title = list_title
-    @user = user
     @items = Array.new
   end
 
@@ -37,48 +36,45 @@ class TodoList
     @items[index].toggle_status
   end
 
-  # Method showing completion status (completes rubric TodoList Class requirement)
+  # Method showing completion status of entire list (completes rubric TodoList Class requirement)
   def completed?
     return @items.all? {|item| item.completion_status == true}
   end
 
   def list_break
-    puts "-" * 45
+    puts "*" * 60
   end
 
-  # def item_break
-  #   puts " " * 20
-  # end
+  def title_break
+    puts "-" * 60
+  end
 
   # Method to print todo list to command line (completes rubric TodoList Class requirement)
   def print_list 
   header = "#{@title} -- Completed: #{completed?}"
-    list_break
+  columns = "ID" + "Priority".rjust(10) + "Item".rjust(8) + "Status".rjust(20)
     puts header
     list_break
-    @items.each_index {|index| puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"}
+    puts columns
+    puts title_break
+    @items.each_index do |index|
+      puts "#{index} - [#{items[index].priority}]".ljust(12) + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
+    end
   end
 
   # Method to print todo list to a file
   def print_to_file()
-    if File.exist?("TodoList.txt")
-      report_file = File.open("TodoList.txt", "a")
-      @items.each_index do |index|
-        report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
-      end
-      report_file.close
-    else
-      report_file = File.new("ToDoList.txt", "w+")
-      @items.each_index do |index|
-        report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
-      end
+    report_file = File.open("TodoList.txt", "w+")
+    @items.each_index do |index|
+      report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
     end
+    report_file.close
   end
 end
 
 class Item
     # methods and stuff go here
-    attr_accessor :description, :completion_status, :priority
+    attr_reader :description, :completion_status, :priority
 
   # Initialize item with a description and marked as not complete (completes rubric Item Class requirement)
   def initialize(item_description, priority)
@@ -93,8 +89,8 @@ class Item
   end
 
 
-  # Method that prints items (completes rubric Item Class requirement)
-  def print_item
-    puts "#{@description} Completed: #{@completion_status} Priority: #{@priority}"
-  end
+  # # Method that prints items (completes rubric Item Class requirement)
+  # def print_item
+  #   puts "#{@description} Completed: #{@completion_status} Priority: #{@priority}"
+  # end
 end
