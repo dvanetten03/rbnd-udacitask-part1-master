@@ -88,9 +88,4 @@ class Item
     @completion_status = !@completion_status
   end
 
-
-  # # Method that prints items (completes rubric Item Class requirement)
-  # def print_item
-  #   puts "#{@description} Completed: #{@completion_status} Priority: #{@priority}"
-  # end
 end
