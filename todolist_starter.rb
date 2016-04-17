@@ -15,7 +15,7 @@ class TodoList
   end
 
   # Method to add items to list (completes rubric TodoList Class requirement)
-  def add_item(new_item, priority=0)
+  def add_item(new_item, priority=4)
     item = Item.new(new_item, priority)
     @items << item
   end
@@ -53,4 +53,23 @@ end
 
 class Item
     # methods and stuff go here
+    attr_accessor :description, :completion_status, :priority
+
+  # Initialize item with a description and marked as not complete (completes rubric Item Class requirement)
+  def initialize(item_description, priority)
+    @description = item_description
+    @completion_status = false
+    @priority = priority
+  end
+
+  # Method to update completion status of an item (completes rubric Item Class requirement)
+  def toggle_status
+    @completion_status = !@completion_status
+  end
+
+
+  # Method that prints items (completes rubric Item Class requirement)
+  def print_item
+    puts "#{@description} Completed: #{@completion_status} Priority: #{@priority}"
+  end
 end
