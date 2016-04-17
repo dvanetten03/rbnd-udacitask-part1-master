@@ -1,0 +1,5 @@
+Additional features included in task list:
+
+1. Priority of task
+2. Printing list with only open(or closed) items
+3. Printing a list to a text (.txt) file

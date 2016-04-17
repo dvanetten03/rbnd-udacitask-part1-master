@@ -50,13 +50,29 @@ class TodoList
   #   puts " " * 20
   # end
 
-  # Method to print todo list (completes rubric TodoList Class requirement)
+  # Method to print todo list to command line (completes rubric TodoList Class requirement)
   def print_list 
   header = "#{@title} -- Completed: #{completed?}"
     list_break
     puts header
     list_break
     @items.each_index {|index| puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"}
+  end
+
+  # Method to print todo list to a file
+  def print_to_file()
+    if File.exist?("TodoList.txt")
+      report_file = File.open("TodoList.txt", "a")
+      @items.each_index do |index|
+        report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
+      end
+      report_file.close
+    else
+      report_file = File.new("ToDoList.txt", "w+")
+      @items.each_index do |index|
+        report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
+      end
+    end
   end
 end
 

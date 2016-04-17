@@ -35,3 +35,6 @@ list.rename("Mom's List")
 
 # Print the list
 list.print_list
+
+# Print the list to a file
+list.print_to_file
