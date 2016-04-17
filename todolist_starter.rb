@@ -56,10 +56,7 @@ class TodoList
     list_break
     puts header
     list_break
-    
-    @items.each_index {|index|
-      puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}" + "          " + "Completed: #{@items[index].completion_status}"
-    }
+    @items.each_index {|index| puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"}
   end
 end
 
