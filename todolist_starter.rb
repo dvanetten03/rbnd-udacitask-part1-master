@@ -5,7 +5,6 @@
 
 class TodoList
     # methods and stuff go here
-    attr_accessor :title
     attr_reader :items
 
   # Initialize to-do list with a title and no items (completes rubric TodoList Class requirement)
@@ -41,9 +40,6 @@ class TodoList
     return @items.all? {|item| item.completion_status == true}
   end
 
-  def list_break
-    puts "*" * 60
-  end
 
   def title_break
     puts "-" * 60
@@ -54,9 +50,9 @@ class TodoList
   header = "#{@title} -- Completed: #{completed?}"
   columns = "ID" + "Priority".rjust(10) + "Item".rjust(8) + "Status".rjust(20)
     puts header
-    list_break
+    title_break
     puts columns
-    puts title_break
+    title_break
     @items.each_index do |index|
       puts "#{index} - [#{items[index].priority}]".ljust(12) + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
     end
@@ -64,7 +60,7 @@ class TodoList
 
   # Method to print todo list to a file
   def print_to_file()
-    report_file = File.open("TodoList.txt", "w+")
+    report_file = File.open("#{@title}.txt", "w+")
     @items.each_index do |index|
       report_file.puts "#{index} - [#{items[index].priority}]" + "#{items[index].description}".ljust(20) + "Completed: #{@items[index].completion_status}"
     end
@@ -87,5 +83,11 @@ class Item
   def toggle_status
     @completion_status = !@completion_status
   end
+
+  # Method to print item
+  def print_item
+    puts "#{@description} is #{completion_status} with a priority of #{@priority}"
+  end
+
 
 end

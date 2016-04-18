@@ -23,7 +23,7 @@ list.remove_item(0)
 list.print_list
 
 # Delete the second item
-list.remove_item(2)
+list.remove_item(1)
 
 # Print the list
 list.print_list

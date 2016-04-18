@@ -1,0 +1,84 @@
+commit 0275b8fafd463033e28bb302d0c5a7e7e511b881
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 16:41:28 2016 -0500
+
+    Refactoring print list
+
+commit 38088a371109a69bec02dfec54a5a99ed9bc0a09
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 16:31:06 2016 -0500
+
+    Add final feature list.
+
+commit 33a3df92c72c92ab2dea26f31dc0b1ce595d694f
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 13:47:05 2016 -0500
+
+    Add print to file feature
+
+commit 999b240095bccfaf33ddde3d3d7661d6bd60237f
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 12:37:24 2016 -0500
+
+    Fix formatting using left justified ljust
+
+commit 4d7f1fbff5dcfa67d48f321f15aec293077111f4
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 02:03:37 2016 -0500
+
+    Finish features
+
+commit 086a99bc4b7e453aab2f78aeac0f0b425a0c7d16
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 01:24:47 2016 -0500
+
+    Finish moving to updated project data
+
+commit 1a7e08ad4ff35c6f58b0e46f1f9fcbd86d6276b1
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 01:15:31 2016 -0500
+
+    Moved from previous version to new rb files and todolist_starter and udacitask_starter
+
+commit 5fa43cff637f3ee6ff23318b70851eec92a16ed2
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 00:22:59 2016 -0500
+
+    Working list but need features
+
+commit 4c5e1c705f564ac1e25c1a3cce336c419d728501
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 00:06:26 2016 -0500
+
+    Remove due_date as new_feature
+
+commit 4ad631e8fd209609b348bc0401d3d6b7aefc51dd
+Author: Diane <diane@code12labs.com>
+Date:   Sun Apr 17 00:00:40 2016 -0500
+
+    Reworked todolist and add new_features
+
+commit 32e7bb33ac6c26f837324f751f5366eb0fb5addd
+Author: Diane <diane@code12labs.com>
+Date:   Sat Apr 16 21:15:44 2016 -0500
+
+    Change attr_reader to attr_accessor
+
+commit 780a2238a0abeb92e62ed89ed857e2f181cac5e3
+Author: dvanetten03 <diane.vanetten@me.com>
+Date:   Sun Mar 6 16:13:47 2016 -0600
+
+    Add comments for all methods
+
+commit 62270958fbefd22d2a8eb652edb237d60b11655c
+Author: dvanetten03 <diane.vanetten@me.com>
+Date:   Sun Mar 6 16:11:04 2016 -0600
+
+    Add all methods to todolist.rb
+
+commit 744eb0bbd01f67e6f56902d76b4cc84342765598
+Author: dvanetten03 <diane.vanetten@me.com>
+Date:   Sat Mar 5 18:40:36 2016 -0600
+
+    Initial commit
+ß
